@@ -1,9 +1,7 @@
-const fontSizeControlInputRef = document.getElementById('font-size-control');
-const textspanOutputRef = document.getElementById('text');
-textspanOutputRef.style.fontSize = `${fontSizeControlInputRef.value}px`;
+const sizeControl = document.getElementById("font-size-control");
+const textAbracadabra = document.getElementById("text");
 
-fontSizeControlInputRef.addEventListener('input', onInputChange);
-
-function onInputChange(event) {
-    textspanOutputRef.style.fontSize = `${event.currentTarget.value}px`;
-}
+sizeControl.addEventListener("input", () => {
+  const fontSize = sizeControl.value;
+  textAbracadabra.style.fontSize = `${fontSize}px`;
+});

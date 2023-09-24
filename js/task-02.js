@@ -8,7 +8,7 @@ const ingredients = [
 ];
 
 const ingredientsList = document.getElementById('ingredients');
-// console.log(ingredientsList);
+
 
 const ingredientsListItems = ingredients.map(ingredient => {
   const ingredientItemRef = document.createElement('li');
@@ -17,6 +17,6 @@ const ingredientsListItems = ingredients.map(ingredient => {
   return ingredientItemRef;
 });
 
-// console.log(ingredientsListItems);
+
 
 ingredientsList.append(...ingredientsListItems);

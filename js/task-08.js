@@ -1,19 +1,21 @@
-const formRef = document.querySelector('.login-form');
+const registerForm = document.querySelector(".login-form");
 
-formRef.addEventListener('submit', onFormSubmit);
+registerForm.addEventListener("submit", handleSubmit);
 
-function onFormSubmit(event) {
+function handleSubmit(event) {
   event.preventDefault();
-  const emailRef = event.currentTarget.elements.email;
-  const passwordRef = event.currentTarget.elements.password;
-  
-  if (emailRef.value === '' || passwordRef.value === '') {
-    alert('❌All form fields must be filled out!')    
+
+  const formData = new FormData(event.target);
+
+  const newUserAcc = {};
+
+  formData.forEach((data, key) => {
+    newUserAcc[key] = data;
+  });
+
+  if (!newUserAcc.email || !newUserAcc.password) {
+    alert(`All input fields must be completed`);
   } else {
-    const loginFormData = {
-      [emailRef.name]: emailRef.value,
-      [passwordRef.name]: passwordRef.value
-    };
-    console.log(loginFormData);
-  }  
+    console.log(`input data: `, newUserAcc);
+  }
 }
